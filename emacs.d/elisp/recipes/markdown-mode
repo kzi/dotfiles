@@ -1,0 +1,2 @@
+(markdown-mode :repo "milkypostman/markdown-mode" :fetcher github)
+

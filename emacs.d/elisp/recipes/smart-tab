@@ -1,0 +1,2 @@
+(smart-tab :repo "genehack/smart-tab" :fetcher github)
+

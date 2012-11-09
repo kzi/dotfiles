@@ -1,0 +1,2 @@
+(python :repo "fgallina/python.el" :fetcher github)
+

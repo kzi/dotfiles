@@ -1,0 +1,2 @@
+(package-spec :repo "rejeep/package-spec" :fetcher github)
+

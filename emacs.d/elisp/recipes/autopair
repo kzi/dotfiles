@@ -1,0 +1,4 @@
+(autopair
+  :fetcher github
+  :repo "capitaomorte/autopair"
+  :files ("autopair.el"))

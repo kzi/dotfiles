@@ -1,0 +1,2 @@
+(magithub :repo "nex3/magithub" :fetcher github)
+

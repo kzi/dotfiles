@@ -1,0 +1,2 @@
+(twittering-mode :repo "hayamiz/twittering-mode" :fetcher github)
+

@@ -1,0 +1,3 @@
+(findr :repo "eschulte/jump.el" :fetcher github :files
+       ("findr.el"))
+

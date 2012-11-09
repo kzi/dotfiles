@@ -1,0 +1,2 @@
+(haskell-mode :repo "haskell/haskell-mode" :fetcher github)
+
