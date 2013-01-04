@@ -2,3 +2,6 @@
 *.dat
 emacs.d/auto-save-list/*
 emacs.d/history
+.DS_Store
+
+vimperator/info/default/history-command

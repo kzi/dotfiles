@@ -1,0 +1,267 @@
+" .vimperatorrc
+" ------------------------------------------------------------------------------
+" author kzi (kzi416@gmail.com)
+" 1.0 (created: 2009/06/23 07:30:04)
+"
+" 2010-04-07
+"	ファイル内の整理
+"	データの修正
+"
+" 2011-03-24
+"    vimp3.0 Configure
+" 2011-05-10
+"    vimp
+""==============================================================================
+
+echo "loading..."
+
+
+" =1 Pref
+" ==============================================================================
+
+" ページのアクセスキーを無効化
+set! ui.key.generalAccessKey=0
+
+"" Gmail/LDR/Fastladder/OpenFL/はてブでは新規タブをバックグラウンドで開く
+autocmd LocationChange (?!https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre)) :set! browser.tabs.loadDivertedInBackground=false
+autocmd LocationChange https?://(mail\.google\.com\/(mail|a)\/|(reader\.livedoor\.com|fastladder\.com|0\.0\.0\.0\:3000)/reader/|b\.hatena\.ne\.jp/revivre) :set! browser.tabs.loadDivertedInBackground=true
+
+
+
+
+" =2 Options
+" ==============================================================================
+" タイトルバーの設定
+set titlestring=Firefox
+
+" 詳細表示を5行に
+set verbose=5
+
+" Beep
+set visualbell
+hi Bell opacity: .5;
+
+" 履歴保持
+set history=200
+
+" ex-modeのインクリメント補完
+set autocomplete
+
+" googleサジェストの有効化
+set suggestengines=google
+
+" 色々新しいタブで開く
+set newtab=all
+
+" 描画形式
+set guioptions=mr
+
+" 新規ウィンドウの処理
+set popups=tab
+
+" ページロード時にテキストボックスにフォーカスするのを防ぐ
+set focuscontent
+
+" リンクのURIをステータスラインに表示
+set showstatuslinks=1
+
+
+
+" =2 mappings
+" ======================================================================
+" j/kの移動量を5倍に. J/Kにpageup/pagedownを定義
+noremap j 5j
+noremap k 5k
+noremap J <C-d>
+noremap K <C-u>
+
+"h/lで戻る/進む
+noremap h <A-Left>
+noremap l <A-Right>
+
+"H/Lでタブ移動
+noremap H gT
+noremap L gt
+
+"←/→でタブ移動
+map <Left> <C-p>
+map <Right> <C-n>
+"Shift+←/Shift+→でタブ位置変更
+map <S-Right> :tabmove! +1<CR>
+map <S-Left> :tabmove! -1<CR>
+
+""検索バーにフォーカス
+map <C-k> <C-v><C-k>
+
+""ロケーションバーにフォーカス
+map <C-l> <A-d>
+
+"" URL中の数字を++/--
+noremap ++ <C-a>
+noremap -- <C-x>
+
+""Ctrl+rで再起動,Ctrl+hでヘルプ ,sで設定ファイル再読込
+map <C-r> :restart<CR>
+map ,s :so _vimperatorrc<CR>
+
+"qmarks
+map qm <esc>:qmark<Space>
+map qa <esc>:qmarks<cr>
+
+"LDRize_Cooperationをトグル
+map z <esc>:toggleldrc<cr>
+
+"" OSのキーバインドを再現 
+"noremap <C-a> <C-v><C-a>
+"noremap <C-c> <C-v><C-c>
+
+"inoremap <C-a> <C-v><C-a>
+"inoremap <C-c> <C-v><C-c>
+"inoremap <C-v> <C-v><C-v>
+"inoremap <C-x> <C-v><C-x>
+"inoremap <C-z> <C-v><C-z>
+"inoremap <C-Space> <C-v><C-Space>
+
+"cnoremap <C-a> <C-v><C-a>
+"cnoremap <C-c> <C-v><C-c>
+"cnoremap <C-v> <C-v><C-v>
+"cnoremap <C-x> <C-v><C-x>
+"cnoremap <C-z> <C-v><C-z>
+
+" ex mode
+"cmap <C-d> <Tab>
+"cmap <C-n> <Tab>
+"cmap <C-p> <S-Tab>
+
+
+
+
+
+" =3 Pluigins
+" ======================================================================
+let g:plugin_loader_roots = "~/Dropbox/repos/vimpr/vimperator-plugins/ ~/.vimperator/load/"
+let g:plugin_loader_plugins = "_libly,account_switcher,appendAnchor,bartab-integration,char-hints-mod2,commandBookmarklet,direct_bookmark,feedSomeKeys_3,fms_switcher,hint-tombloo,maine_coon,migratestatusbar,multi_requester,nextlink,pluginManager,sbm_incsearch,tombloo,twittperator"
+
+" feedSomeKeys_3.js
+" - http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/feedSomeKeys_2.js
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc
+lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S N P X O gh ga gs gt gu u / ? J K Z G g
+lazy fmaps -u='(fastladder|livedoor)\.com/reader' j k s a p o v c i,p <Space> <S-Space> z b < > q w e,g Z
+lazy fmaps -u='https?://www\.rememberthemilk\.com/home/' j k m i c t ? d F,f G,g S,s L,l Y,y H,h M,m <Del> <C-S-Left> <C-S-Right>
+lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/list' o j k
+lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/detail' u
+
+" Direct Bookmark 
+" - http://project-p.jp/halt/wiki/Vimperator/plugin/direct_bookmark.js
+let g:direct_sbm_use_services_by_post = 'hd'
+let g:direct_sbm_use_services_by_tag   = 'd'
+
+"twittperator
+let g:twittperator_use_ssl_connection_for_api_ep = 1
+
+" Append Ancer
+let g:auto_append_anchor = "true"
+
+" maine_coon.js :required - _libly.js
+" - http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/maine_coon.js
+"let g:mainecoon=am
+
+"" nextlink.js : required - _libly.js
+"let g:nextlink_followlink = "true"
+
+" sbm_incsearch.js
+" - http://github.com/tsukkee/config/blob/master/vimperator/plugin/sbm_incsearch.js
+let sbmincsearch_service_name = "delicious"
+let sbmincsearch_max = 50
+
+
+"char-hint
+let g:hintsio="io"
+"押しやすいボタンから並べてみた
+let g:hintchars="JKLASDFUIOPQWERGHTNMCV"
+
+
+"" hatenabookmark
+" https://github.com/hatena/hatena-bookmark-xul/wiki/Vimperator-%E3%81%A7%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E6%8B%A1%E5%BC%B5%E3%82%92%E4%BD%BF%E3%81%86
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
+nnoremap s :hbt<Space>
+nnoremap S :hbtc<Space>
+set complete+=H
+
+" Status Barの変更
+javascript <<JS
+let statusLine = document.getElementById("liberator-statusline");
+let bottomBar = document.getElementById("liberator-bottombar");
+
+// ステータスラインに戻る/進むを表示
+if(!document.getElementById("history-indicators")) {
+  let xml = <hbox id="history-indicators" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <label value="&lt;" id="back-indicator" class="history-indicator">
+      <observes element={document.getElementById("back-button").command} attribute="disabled" />
+    </label>
+    <label value="&gt;" id="forward-indicator" class="history-indicator">
+      <observes element={document.getElementById("forward-button").command} attribute="disabled" />
+    </label>
+  </hbox>;
+
+  statusLine.appendChild(document.adoptNode(new DOMParser().parseFromString(xml.toXMLString(), "application/xml").documentElement, true));
+}
+
+// ステータスバーにブックマークアイコンを移動
+let (statusBar = document.getElementById("status-bar")) {
+  let (id = "star-button") {
+    if(!document.getElementById("panel-" + id)) {
+      let panel = document.createElement("statusbarpanel");
+      panel.setAttribute("id", "panel-" + id);
+      let (icon = document.getElementById(id)) {
+        icon.setAttribute("class", "");
+        panel.appendChild(icon);
+      }
+      statusBar.insertBefore(panel, statusBar.firstChild);
+    }
+  }
+}
+
+// ステータスラインの横にステータスバーを移動
+let (statusBar = document.getElementById("status-bar")) {
+  statusBar.style.maxHeight = "20px";
+  bottomBar.appendChild(statusBar);
+}
+
+// ステータスラインにfaviconを移動
+let (favicon = document.getElementById("page-proxy-stack")) {
+  favicon.style.maxWidth = favicon.style.maxHeight = "20px"
+  statusLine.insertBefore(favicon, statusLine.firstChild);
+}
+JS
+
+style -name history-indicators chrome://browser/content/browser.xul <<CSS
+  #history-indicators {
+    padding: 0 ! important;
+  }
+  .history-indicator {
+    margin: 0 1px ! important;
+    color: WindowText;
+  }
+  .history-indicator[disabled="true"] {
+    //visibility: hidden;
+  }
+CSS
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""
+" Abbreviations
+
+""""""""""""""""""""""""""""""""""""""""
+" Etc
+source! ~/.vimperatorrc.local
+
+colorscheme ywgx
+
+
+echo "load end...."
+" vim: set ft=vimperator:

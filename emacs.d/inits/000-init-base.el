@@ -9,8 +9,6 @@
 ;;   * It changes to shape corresponding to Cocoa Emacs. 
 ;;   * fix....
 ;;==============================================================================
-(set-language-environment 'Japanese)               ; Set Language.
-(prefer-coding-system 'utf-8)                      ; Set Encoding.
 (setq indent-line-function 'indent-relative-maybe) ; Shift + Arrow Key.
 (setq inhibit-startup-message t)                   ; hide start message.
 (setq backup-inhibited t)                          ; Don't make Backup file.
@@ -36,13 +34,6 @@
 (setq truncate-partial-width-windows t)
 (blink-cursor-mode t)                              ; カーソルの点滅を行う
 
-
-;; Configure encode
-;;
-(set-language-environment 'Japanese)
-(prefer-coding-system           'utf-8)
-(setq buffer-file-coding-system 'utf-8)
-(set-buffer-file-coding-system  'utf-8)
-(set-terminal-coding-system     'utf-8)
-(set-keyboard-coding-system     'utf-8)
-(set-clipboard-coding-system    'utf-8)
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
