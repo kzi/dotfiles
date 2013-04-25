@@ -22,18 +22,21 @@
 (require 'saveplace)							   
 (show-paren-mode 1)
 (global-set-key (kbd "C-h") 'delete-backward-char) ; C-hをBackSpaceとする
-(setq display-time-day-and-date t)		   ; 日時を表示する
-(setq display-time-24hr-format t)		   ; 表示フォーマットを24時間表示
-(display-time-mode t)
-(line-number-mode t)				   ; 行数を表示
-(column-number-mode t)				   ; 列数を表示
-(transient-mark-mode 1)				   ; リージョンに色をつける
-(tool-bar-mode -1)				   ; ツールバーを非表示
-(scroll-bar-mode -1)				   ; スクロールバーを非表示
+(setq display-time-day-and-date t)                 ; 日時を表示する
+(setq display-time-24hr-format t)		           ; 表示フォーマットを24時間表示
+(display-time-mode t)                              ;
+(line-number-mode t)                               ; 行数を表示
+(column-number-mode t)				               ; 列数を表示
+(transient-mark-mode 1)				               ; リージョンに色をつける
+(tool-bar-mode -1)                                 ; ツールバーを非表示
+(scroll-bar-mode -1)                               ; スクロールバーを非表示
 (setq truncate-lines t)                            ; 折り返しはしない
 (setq truncate-partial-width-windows t)
 (blink-cursor-mode t)                              ; カーソルの点滅を行う
 
+;;
+;; Fast Mode
+;;
 (setq linum-delay t)
 (defadvice linum-schedule (around my-linum-schedule () activate)
   (run-with-idle-timer 0.2 nil #'linum-update-current))

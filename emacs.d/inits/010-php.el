@@ -19,7 +19,7 @@
 (add-hook 'php-mode-hook (lambda ()
 						   (setq c-basic-offset 4)
 						   (setq tab-width 4)
-						   (setq indent-tabs-mode t)
+						   (setq indent-tabs-mode nil)
 						   (setq-default tab-width 4) 
 						   (require 'php-completion)
 						   (php-completion-mode t)
@@ -30,3 +30,21 @@
 											  ac-source-php-completion
 											  ac-source-filename
 											  ))))
+
+(require 'mmm-mode)
+(setq mmm-global-mode 'maybe)
+(mmm-add-mode-ext-class nil "\\.php?\\'" 'html-php)
+(mmm-add-classes
+ '((html-php
+    :submode php-mode
+    :front "<\\?\\(php\\)?"
+    :back "\\?>")))
+
+(defun save-mmm-c-locals ()
+  (with-temp-buffer
+    (php-mode)
+    (dolist (v (buffer-local-variables))
+      (when (string-match "\\`c-" (symbol-name (car v)))
+        (add-to-list 'mmm-save-local-variables `(,(car v) nil
+                                                 ,mmm-c-derived-modes))))))
+(save-mmm-c-locals)

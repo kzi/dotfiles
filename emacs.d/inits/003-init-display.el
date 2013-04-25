@@ -12,12 +12,8 @@
 
 ;； Configure display size and color.
 (if window-system (progn
-		    (setq initial-frame-alist '((width . 80) (height . 30) (top . 30)))
-		    (set-background-color "Black")
-		    (set-foreground-color "White")
-		    (set-cursor-color "Gray")
-		    ))
-(set-frame-parameter (selected-frame) 'alpha '(85 50))
+					(setq initial-frame-alist '((width . 80) (height . 30) (top . 30)))
+					))
 
 
 (when (>= emacs-major-version 23)
@@ -27,8 +23,8 @@
 ;; Configure Font
 (create-fontset-from-ascii-font "VL Gothic-14:weight=normal:slant=normal" nil "menlokakugo")
 (set-fontset-font "fontset-menlokakugo"
-		  'unicode
-		  (font-spec :family "VL Gothic" :size 14)
-		  nil
-		  'append)
+				  'unicode
+				  (font-spec :family "VL Gothic" :size 14)
+				  nil
+				  'append)
 (add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
