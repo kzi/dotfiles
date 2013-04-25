@@ -5,3 +5,22 @@ emacs.d/history
 .DS_Store
 
 vimperator/info/default/history-command
+emacs.d/url/*
+emacs.d/elpa/archives/*
+emacs.d/elpa/archives/gnu/archive-contents
+
+emacs.d/elpa/archives/marmalade/archive-contents
+
+emacs.d/elpa/archives/melpa/archive-contents
+
+vimperator/info/default/history-search
+
+vimperator/info/default/local-marks
+
+vimperator/info/default/macros
+
+vimperator/info/default/plugins-libly-wedata-AutoPagerize-items
+
+vimperator/info/default/plugins-libly-wedata-Multi%20Requester-items
+
+vimperator/info/default/quickmarks
