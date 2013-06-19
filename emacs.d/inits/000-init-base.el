@@ -40,3 +40,30 @@
 (setq linum-delay t)
 (defadvice linum-schedule (around my-linum-schedule () activate)
   (run-with-idle-timer 0.2 nil #'linum-update-current))
+
+
+;;
+;; Platform判別
+;;
+(defvar os-type nil)
+
+(cond ((string-match "apple-darwin" system-configuration) ;; Mac
+       (setq os-type 'mac))
+      ((string-match "linux" system-configuration)        ;; Linux
+       (setq os-type 'linux))
+      ((string-match "freebsd" system-configuration)      ;; FreeBSD
+       (setq os-type 'bsd))
+      ((string-match "mingw" system-configuration)        ;; Windows
+       (setq os-type 'win)))
+
+(defun mac? ()
+  (eq os-type 'mac))
+
+(defun linux? ()
+  (eq os-type 'linux))
+
+(defun bsd? ()
+  (eq os-type 'freebsd))
+
+(defun win? ()
+  (eq os-type 'win))
