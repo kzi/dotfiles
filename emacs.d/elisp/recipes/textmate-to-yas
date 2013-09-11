@@ -1,1 +1,0 @@
-(textmate-to-yas :fetcher github :repo "mlf176f2/textmate-to-yas.el" :files ("*.el" "*.pl"))

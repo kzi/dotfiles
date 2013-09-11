@@ -1,3 +1,0 @@
-(o-blog :repo "renard/o-blog"
-        :fetcher github
-        :files ("o-blog*.el" "templates" "example"))

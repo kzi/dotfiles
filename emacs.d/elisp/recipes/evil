@@ -1,2 +1,0 @@
-(evil :url "git://gitorious.org/evil/evil.git" :fetcher git)
-

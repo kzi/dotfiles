@@ -1,2 +1,0 @@
-(ein :repo "tkf/emacs-ipython-notebook" :fetcher github
-     :files ("lisp/*"))

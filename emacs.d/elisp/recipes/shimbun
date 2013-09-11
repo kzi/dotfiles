@@ -1,3 +1,0 @@
-(shimbun :repo "emacsmirror/w3m"
-	 :fetcher github
-	 :files ("shimbun/*.el"))

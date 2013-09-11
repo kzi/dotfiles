@@ -1,2 +1,0 @@
-(rspec-mode :repo "pezra/rspec-mode" :fetcher github)
-

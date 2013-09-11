@@ -2,12 +2,13 @@
 ;; Personal Configure init.el
 ;;------------------------------------------------------------------------------
 ;; [Created]  YYYY-MM-DD
-;; [Modified] 2013-01-03
+;; [Modified] 2013-08-20
 ;; [Author]   kzi <kzi416@gmail.com>
 ;;------------------------------------------------------------------------------
 ;; [Comment]
 ;;   * Fixed
 ;;   * Add Shell Script
+;;   * Delete disused configure.
 ;;==============================================================================
 
 ;; Configure Load Path
@@ -22,5 +23,3 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
 
-(load-theme 'jp-tranditional t)
-(enable-theme 'jp-tranditional)
