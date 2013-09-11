@@ -140,7 +140,7 @@ map z <esc>:toggleldrc<cr>
 " =3 Pluigins
 " ======================================================================
 let g:plugin_loader_roots = "~/Dropbox/repos/vimpr/vimperator-plugins/ ~/.vimperator/load/"
-let g:plugin_loader_plugins = "_libly,account_switcher,appendAnchor,bartab-integration,char-hints-mod2,commandBookmarklet,direct_bookmark,feedSomeKeys_3,fms_switcher,hint-tombloo,maine_coon,migratestatusbar,multi_requester,nextlink,pluginManager,sbm_incsearch,tombloo,twittperator"
+let g:plugin_loader_plugins = "_libly,account_switcher,appendAnchor,bartab-integration,commandBookmarklet,direct_bookmark,feedSomeKeys_3,fms_switcher,hint-tombloo,maine_coon,migratestatusbar,multi_requester,nextlink,pluginManager,sbm_incsearch,tombloo,twittperator"
 
 " feedSomeKeys_3.js
 " - http://coderepos.org/share/browser/lang/javascript/vimperator-plugins/trunk/feedSomeKeys_2.js
@@ -151,7 +151,9 @@ lazy fmaps -u='www\.google\.co\.jp/reader' -events=vkeypress j k n p m s v A r S
 lazy fmaps -u='reader\.(fastladder|livedoor)\.com/' j k s a p o v c i,p <Space> <S-Space> z b < > q w e,g Z g G
 lazy fmaps -u='https?://www\.rememberthemilk\.com/home/' j k m i c t ? d F,f G,g S,s L,l Y,y H,h M,m <Del> <C-S-Left> <C-S-Right>
 lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/list' o j k
+lazy fmaps -u='feedly\.com' j k g h m a e t c d p l s n b n p o v V m s S D e t d c / r ? 1 2 3 4 5 6 7 8 9 <Enter>
 lazy fmaps -u='http://code.google.com/p/vimperator-labs/issues/detail' u
+
 
 " Direct Bookmark 
 " - http://project-p.jp/halt/wiki/Vimperator/plugin/direct_bookmark.js
@@ -178,10 +180,7 @@ let sbmincsearch_max = 50
 
 
 "char-hint
-let g:hintsio="io"
-"押しやすいボタンから並べてみた
-let g:hintchars="JKLASDFUIOPQWERGHTNMCV"
-
+set hintchars=ifjklasdhguionmerwc
 
 "" hatenabookmark
 " https://github.com/hatena/hatena-bookmark-xul/wiki/Vimperator-%E3%81%A7%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E6%8B%A1%E5%BC%B5%E3%82%92%E4%BD%BF%E3%81%86

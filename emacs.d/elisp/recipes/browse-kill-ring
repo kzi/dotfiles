@@ -1,2 +1,0 @@
-(browse-kill-ring :repo "todesschaf/browse-kill-ring" :fetcher github)
-

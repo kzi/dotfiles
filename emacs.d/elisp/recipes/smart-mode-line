@@ -1,1 +1,0 @@
-(smart-mode-line :repo "Bruce-Connor/smart-mode-line" :fetcher github)

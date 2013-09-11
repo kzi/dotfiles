@@ -1,12 +1,14 @@
 ;;==============================================================================
-;; Personal Configure yasnippet
+;; Mark Down Uses...
 ;;------------------------------------------------------------------------------
-;; [Create]      2010-01-01
-;; [Last Update] 2013-01-04
+;; [Create]      2012-08-29
+;; [Last Update] 2012-08-29
 ;; [Author]      kzi <kzi416@gmail.com>
 ;;------------------------------------------------------------------------------
 ;; [Comment]
-;;   * Fix it
+;;   * Create.
 ;;==============================================================================
-(require 'yasnippet)
-(yas-global-mode 1)
+(autoload 'markdown-mode "markdown-mode.el" 
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

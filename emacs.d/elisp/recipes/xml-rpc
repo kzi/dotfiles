@@ -1,1 +1,0 @@
-(xml-rpc :fetcher bzr :url "lp:xml-rpc-el")

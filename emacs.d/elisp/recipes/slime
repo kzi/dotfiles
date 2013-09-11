@@ -1,3 +1,0 @@
-(slime :repo "antifuchs/slime"
-       :fetcher github
-       :files ("*.el" "*.lisp" "*.asd" "contrib"))
