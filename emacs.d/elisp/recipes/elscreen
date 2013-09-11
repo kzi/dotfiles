@@ -1,3 +1,0 @@
-(elscreen
- :repo "shosti/elscreen"
- :fetcher github)
