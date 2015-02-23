@@ -1,0 +1,10 @@
+*.elc
+*.dat
+emacs.d/auto-save-list/*
+emacs.d/history
+emacs.d/elpa/*
+.DS_Store
+
+vimperator/info/default/*
+emacs.d/url/*
+emacs.d/elpa/archives/*
