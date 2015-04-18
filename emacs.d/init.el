@@ -2,26 +2,15 @@
 
 ;; Filename: init.el
 ;; Description: kzi's Emacs File
-<<<<<<< HEAD
 ;; Package-Requires: ((emacs "24.3"))
 ;; Author: kzi <kzi416@gmail.com>
 ;; Created:  2012-12-18
-;; Modified: 2015-04-01
-=======
-;; Package-Requires: ((emacs "24.4"))
-;; Author: kzi <kzi416@gmail.com>
-;; Created:  2012-12-18
-;; Modified: 2015-02-20
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
-;; Version: 1.01
+;; Modified: 2015-04-16
+;; Version: 1.02
 ;; Keywords: internal, local
 ;; Human-Keywords: Emacs Initialization
 ;; Namespace: emacs/
-<<<<<<< HEAD
-;; URL: https://github.com/kzi/dotfiles.git
-=======
-;; URL: https://github.com/kzi/dotfiles
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
+;; URL: https://github.com.kzi/dotfiles
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -52,20 +41,11 @@
 ;; Linux, MacについてはCaskを利用
 ;; WindowsについてはPackage.elを使った形となる。
 ;;
-<<<<<<< HEAD
 ;; 要求推奨
 ;; migemo     (migemo)
 ;; gnu global (gtags, helm-gtags)
 ;; grep       (igrep)
-;; node
-=======
-;; 必要ソフトウェア
-;; migemo     (migemo)
-;; gnu global (gtags, helm-gtags)
-;; grep       (igrep)
-;; VL Gothic Font (必須ではない)
-;; 上記が揃わない場合、それぞれの処理が正常に動かない場合がある。
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
+;; 
 ;;; 
 
 
@@ -74,23 +54,13 @@
 
 ;;; Proxy設定
 ;;
-<<<<<<< HEAD
-;; Proxy経由の時にコメントを解除。
-=======
-;; Proxy経由のDL時、Local端末で実行する場合は以下の
-;; コメントを解除。
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
+;; Proxy経由時コメントを解除。
 ;;
 ;; 対象：url.el
 ;;;
 ;;(setq url-proxy-services '(
-<<<<<<< HEAD
-;;			   ("http" . "xxx.xxx.xxx.xxx:yyyy")
-;;			   ("https" . "xxx.xxx.xxx.xxx:yyyy")))
-=======
 ;;			   ("http" . "XXX.XXX.XXX.XXX:YYYY")
 ;;			   ("https" . "XXX.XXX.XXX.XXX:YYYY")))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -110,11 +80,7 @@
 
 ;;; 一般的な設定
 ;; 
-<<<<<<< HEAD
 ;; 
-=======
-;; 外部ライブラリに依存しないemacs固有設定のまとめ
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;;
 ;;
 ;;;
@@ -134,10 +100,6 @@
 (setq-default save-place t)                        ;; 
 (require 'saveplace)				   ;;
 (show-paren-mode 1)                                ;; 括弧の強調表示
-<<<<<<< HEAD
-=======
-(global-set-key (kbd "C-h") 'delete-backward-char) ;; C-hをBackSpaceとする
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 (display-time-mode t)                              ;; 時間を表示する
 (line-number-mode t)                               ;; 行数を表示
 (column-number-mode t)				   ;; 列数を表示
@@ -304,11 +266,7 @@
     (load-file "~/.emacs.d/load-package.el"))
   (progn 
     (require 'eieio)
-<<<<<<< HEAD
     (require 'cask)
-=======
-    (require 'cask "~/.cask/cask.el")
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
     (cask-initialize)))
 (require 'pallet)
 
@@ -329,7 +287,6 @@
 
 
 
-<<<<<<< HEAD
 ;;; Key Bind
 ;;
 ;;
@@ -343,15 +300,10 @@
 
 ;;; exec-path-from-shell
 ;;
-=======
-;;; exec-path-from-shell
-;; 
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;; ログインシェルと、Emacs上のShellにおける
 ;; 環境変数の統一化。
 ;;;
 (use-package exec-path-from-shell
-<<<<<<< HEAD
   :if (not (win?))
   :config
   (exec-path-from-shell-initialize)
@@ -378,12 +330,13 @@
   (when (win?)
     (setq migemo-command "C:/Apps/cmigemo/cmigemo.exe")
     (setq migemo-dictionary "C:/Apps/cmigemo/dict/utf-8/migemo-dict"))
-  (when (mac?)
+  (when (linux?)
     (setq migemo-command "/usr/local/bin/cmigemo")
     (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict"))
   (when (linux?)
     (setq migemo-command "/usr/local/bin/cmigemo")
     (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")))
+
 
 
 
@@ -397,24 +350,13 @@
   :config
   (igrep-define lgrep (igrep-use-zgrep nil)(igre-regex-option "-n -Ou8"))
   (igrep-find-define lgrep (igrep-use-zgrep nil)(igrep-regex-option "-n -Ou8")))
-=======
-  :config
-  (unless (win?)
-    (exec-path-from-shell-initialize)
-    (let ((envs '("PATH" "VIRTUAL_ENV" "GOROOT" "GOPATH")))
-      (exec-path-from-shell-copy-envs envs))))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
 
 
 ;;; eshell
-<<<<<<< HEAD
 ;;
-=======
-;; 
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;; 特記事項なし。
 ;;;
 
@@ -423,11 +365,7 @@
 
 
 ;;; Undo Tree
-<<<<<<< HEAD
 ;;
-=======
-;; 
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;; Undo 履歴のTree表示
 ;;
 ;;;
@@ -436,45 +374,28 @@
 
 
 
-<<<<<<< HEAD
 
 
 ;;; 自動保存
 ;;
-=======
-;;; 自動保存
-;; 
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;; 最近開いたファイルの単一管理処理
 ;;
 ;; @todo recentfが存在しない場合、after-init-hookからのコマンド起動が何故か失敗する。。。
 ;;;
 (use-package recentf-ext
-<<<<<<< HEAD
   :init
-=======
-  :bind (("C-x C-r" . recentf-open-files))
-  :config
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
   (setq recentf-max-saved-items 2000)
   (setq recentf-exclude '(".recentf"))
   (setq recentf-auto-cleanup 10)
   (setq recentf-auto-save-timer (run-with-idle-timer 30 t 'recentf-save-list))
   (setq recentf-save-file "~/.emacs.d/.recentf")
-<<<<<<< HEAD
   (bind-key "C-x C-r" 'recentf-open-files)
   (recentf-mode +1))
-=======
-  (recentf-mode +1))
-;;;; 起動画面で recentf を開く
-;;(add-hook 'after-init-hook (lambda() (recentf-open-files)))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
 
 
-<<<<<<< HEAD
 ;;; auto-complete
 ;;
 ;; 補完のアレ
@@ -505,17 +426,6 @@
 ;;
 ;;;
 
-=======
-;;; buffer move
-;; 
-;; Buffer位置変更の簡略化
-;;;
-(use-package buffer-move
-  :bind (("M-g h" . buf-move-left)
-	 ("M-g j" . buf-move-down)
-	 ("M-g k" . buf-move-up)
-	 ("M-g l" . buf-move-right)))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -523,46 +433,16 @@
 ;;; popwin
 ;;
 ;;
-<<<<<<< HEAD
 ;;
 ;;
 ;;;
 (use-package popwin
   :config (setq display-buffer-function 'popwin:display-buffer))
-=======
-;;;
-(use-package popwin
-;;  :bind (("C-z" .  popwin:keymap))
-  :config
-  (setq display-buffer-function 'popwin:display-buffer)
-  ;; Popup結果をページ単位でスクロールする処理
-  ;; http://d.hatena.ne.jp/syohex/20130903/1378219917
-  (defun ac-page-next ()
-    (interactive)
-    (when (ac-menu-live-p)
-      (when (popup-hidden-p ac-menu)
-	(ac-show-menu))
-      (popup-page-next ac-menu)
-      (if (eq this-command 'ac-page-next)
-	  (setq ac-dwim-enable t))))
-  (defun ac-page-previous ()
-    (interactive)
-    (when (ac-menu-live-p)
-      (when (popup-hidden-p ac-menu)
-	(ac-show-menu))
-      (popup-page-previous ac-menu)
-      (if (eq this-command 'ac-page-previous)
-	  (setq ac-dwim-enable t))))
-;; (define-key ac-complete-mode-map (kbd "C-v") 'ac-page-next)
-;; (define-key ac-complete-mode-map (kbd "M-v") 'ac-page-previous)
-)
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
 
 
-<<<<<<< HEAD
 ;;; yasnippet
 ;;
 ;;
@@ -587,33 +467,6 @@
 	 ("M-g l" . buf-move-right)))
 
 
-=======
-;;; migemo
-;; 
-;;
-;;
-;;;
-(use-package migemo
-  :config
-  (if (win?)
-      (progn 
-	(cond ((equal (executable-find "C:/Apps/cmigemo/cmigemo.exe") "C:/Apps/cmigemo/cmigemo.exe")
-	       (setq migemo-command "C:/Apps/cmigemo/cmigemo.exe")
-	       (setq migemo-options '("-q" "--emacs"))
-	       (setq migemo-dictionary "C:/Apps/cmigemo/dict/utf-8/migemo-dict")
-	       (setq migemo-user-dictionary nil) 
-	       (setq migemo-regex-dictionary nil)
-	       )))
-    (progn 
-      (setq migemo-command "/usr/local/bin/cmigemo")
-      (setq migemo-options '("-q" "--emacs"))
-      (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
-      (setq migemo-user-dictionary nil)
-      (setq migemo-coding-system 'utf-8-unix)
-      (setq migemo-regex-dictionary nil)
-      (load-library "migemo")
-      (migemo-init))))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -624,11 +477,8 @@
 ;;
 ;;;
 (use-package multiple-cursors
-<<<<<<< HEAD
   :ensure multiple-cursors
   :defer t
-=======
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
   :config
   (defun mc/edit-lines-or-string-rectangle (s e)
     "C-x r tで同じ桁の場合にmc/edit-lines (C-u M-x mc/mark-all-dwim)"
@@ -646,7 +496,6 @@
       (16 (mc/mark-all-dwim t))
       (4 (mc/mark-all-dwim nil))
       (1 (mark-sexp 1))))
-<<<<<<< HEAD
     (global-set-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp))
 
 
@@ -671,24 +520,7 @@
 ;;
 ;;;
 (use-package git-gutter
-  :init
-  (global-git-gutter-mode t)
-  (custom-set-variables
-   '(git-gutter:window-width 2)
-   '(git-gutter:modified-sign "🍻")
-   '(git-gutter:added-sign "🍣")
-   '(git-gutter:deleted-sign "🍅"))
-  )
-=======
-  (global-set-key (kbd "C-M-SPC") 'mc/mark-all-dwim-or-mark-sexp))
-
-
-;;; git-gutter-mode
-;; 
-;;;
-(use-package git-gutter
   :config (global-git-gutter-mode t))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -699,15 +531,11 @@
 ;;
 ;;;
 (use-package magit
-<<<<<<< HEAD
   :bind (("C-c g" . magit-status)
 	 ("C-c C-g l" . magit-file-log)
 	 ("C-c f" . magit-grep))
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
-=======
-  :config
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
   (defadvice magit-status (around magit-fullscreen activate)
     (window-configuration-to-register :magit-fullscreen)
     ad-do-it
@@ -738,7 +566,6 @@
 
 
 ;;; Helm
-<<<<<<< HEAD
 ;;
 ;;;
 ;;(eval-when-compile (require 'cl))
@@ -774,40 +601,6 @@
 
 
 ;;; auzu
-=======
-;; 
-;;;
-(eval-when-compile (require 'cl))
-(require 'helm-config)
-(require 'helm-command)
-(require 'helm-descbinds)
-
-(setq helm-idle-delay             0.3
-      helm-input-idle-delay       0.1
-      helm-candidate-number-limit 200)
-
-(let ((key-and-func
-       `((,(kbd "C-r")   helm-for-files)
-         (,(kbd "C-^")   helm-c-apropos)
-         (,(kbd "C-;")   helm-resume)
-         (,(kbd "M-s")   helm-occur)
-         (,(kbd "M-x")   helm-M-x)
-         (,(kbd "M-y")   helm-show-kill-ring)
-         (,(kbd "M-z")   helm-do-grep)
-         (,(kbd "C-S-h") helm-descbinds)
-        )))
-  (loop for (key func) in key-and-func
-        do (global-set-key key func)))
-
-;; package-install ac-helm
-(require 'ac-helm)
-(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
-
-
-;;;
-;;
-;; auzu
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;;
 ;;
 ;;
@@ -834,7 +627,6 @@
 ;;
 ;;;
 (use-package open-junk-file
-<<<<<<< HEAD
   :config
   (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.org")
   (bind-key "C-x j" 'open-junk-file))
@@ -909,25 +701,6 @@
 ;;
 ;;
 ;;;
-=======
-  :bind (("C-x j" . open-junk-file))
-  :config
-  (setq open-junk-file-format "~/.emacs.d/junk/%Y-%m-%d-%H%M%S.org"))
-
-
-;; yasnippet
-;;
-;;
-(use-package yasnippet
-  :config
-  (yas-global-mode 1))
-
-
-;;
-;; php
-;;
-
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 (use-package php-mode
   :config
   (setq auto-mode-alist  (cons '("\\.php\\'" . php-mode) auto-mode-alist))
@@ -947,15 +720,12 @@
 						ac-source-filename
 						)))))
 (add-hook 'php-mode-hook 'flycheck-mode)
-<<<<<<< HEAD
 (require 'flymake-phpcs)
 (add-hook 'php-mode-hook 'flymake-phpcs-load)
 (custom-set-variables '(flymake-phpcs-standard "Symfony2"))
 
 
 
-=======
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -964,7 +734,6 @@
 ;;
 (use-package js2-mode
   :config (add-to-list 'auto-mode-alist '("\\.\\(js\\|json\\)$" . js2-mode)))
-<<<<<<< HEAD
 (add-hook 'js2-mode-hook '(lambda ()
 			    (require 'flymake-jshint)
 			    (flymake-jshint-load)))
@@ -1003,34 +772,12 @@
 
 
 
-=======
-
-
-
-;;
-;; Ruby
-;;
-;; ruby-mode
-(autoload 'ruby-mode "ruby-mode" "Mode for editing ruby source files" t)
-(setq auto-mode-alist  (append '(("\\.rb$" . ruby-mode)) auto-mode-alist))
-(setq interpreter-mode-alist (append '(("ruby" . ruby-mode)) interpreter-mode-alist))
-(autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
-  
-;; ruby-mode indent
-(setq ruby-deep-indent-paren-style nil)
-
-;; ruby-electric
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook '(lambda () (ruby-electric-mode t)))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 ;; Smart Compile
 (require 'smart-compile)
 (global-set-key (kbd "C-x c") 'smart-compile)
 (global-set-key (kbd "C-x C-x") (kbd "C-x c C-m"))
 
-<<<<<<< HEAD
 
 
 
@@ -1043,13 +790,6 @@
   (add-hook 'ruby-mode-hook 'flycheck-mode))
 
 
-=======
-;; ruby-block
-(require 'ruby-block)
-(ruby-block-mode t)
-(setq ruby-block-highlight-toggle t)
-(add-hook 'ruby-mode-hook 'flycheck-mode)
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -1059,11 +799,7 @@
 ;;
 ;;
 ;;
-<<<<<<< HEAD
 ;;;
-=======
-;;; 
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.ctp\\'"   . web-mode)) ;; CakePHP 2.X
@@ -1076,55 +812,32 @@
     (setq web-mode-code-indent-offset 4)
     (setq web-mode-engines-alist
 	  '(("php"    . "\\.ctp\\'")
-<<<<<<< HEAD
 	    ("php"    . "\\.tpl\\'"))
-=======
-	    ("php"    . "\\.tpl\\'"))  
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 	  )
     )
   (add-hook 'web-mode-hook  'web-mode-hook))
 
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;;
 ;; MarkDown
 ;;
 (use-package markdown-mode
-<<<<<<< HEAD
-  :mode
-  ("\\.md\\'" . gfm-mode))
+  :mode ("\\.md\\'" . gfm-mode))
 
-=======
-	     :mode ("\\.md\\'" . gfm-mode))
-;;(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
-;;(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-;;(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
 (use-package helm-gtags
   :config
   (add-hook 'helm-gtags-mode-hook
-<<<<<<< HEAD
 	    '(lambda ()
 	       ;;入力されたタグの定義元へジャンプ
 	       (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
 	       ;;入力タグを参照する場所へジャンプ
 	       (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-=======
-	    '(lambda ()  
-	       ;;入力されたタグの定義元へジャンプ
-	       (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-	       ;;入力タグを参照する場所へジャンプ
-	       (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)  
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 	       ;;入力したシンボルを参照する場所へジャンプ
 	       (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
 	       ;;タグ一覧からタグを選択し, その定義元にジャンプする
@@ -1144,17 +857,10 @@
 ;;;
 (defun my-c-mode-update-gtags ()
   (let* ((file (buffer-file-name (current-buffer)))
-<<<<<<< HEAD
 	 (dir (directory-file-name (file-name-directory file))))
     (when (executable-find "global")
       (start-process "gtags-update" nil
 		     "global" "-uv"))))
-=======
-     (dir (directory-file-name (file-name-directory file))))
-    (when (executable-find "global")
-      (start-process "gtags-update" nil
-             "global" "-uv"))))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 ;;(add-hook 'after-save-hook
 ;;      'my-c-mode-update-gtags)
@@ -1162,11 +868,7 @@
 
 
 
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 ;;;
 ;; Projectile
@@ -1176,58 +878,3 @@
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
-<<<<<<< HEAD
-=======
-
-
-
-;;
-;; smart newline
-;; http://rubikitch.com/2014/12/31/smart-newline/
-(use-package smart-newline
-  :config
-  (require 'smart-newline)
-  (global-set-key (kbd "C-m") 'smart-newline)
-  (add-hook 'ruby-mode-hook 'smart-newline-mode)
-  (add-hook 'emacs-lisp-mode-hook 'smart-newline-mode)
-  (add-hook 'org-mode-hook 'smart-newline-mode)
-
-  (defadvice smart-newline (around C-u activate)
-    "C-uを押したら元のC-mの挙動をするようにした。org-modeなどで活用。"
-    (if (not current-prefix-arg)
-	ad-do-it
-      (let (current-prefix-arg)
-	(let (smart-newline-mode)
-	  (call-interactively (key-binding (kbd "C-m"))))))))
-
-
-
-
-(use-package win-switch
-  :config
-  ;;; 0.75秒間受け付けるタイマー
-  (setq win-switch-idle-time 0.75)
-  ;;; 好きなキーを複数割り当てられる
-  ;; ウィンドウ切り替え
-  (win-switch-set-keys '("k") 'up)
-  (win-switch-set-keys '("j") 'down)
-  (win-switch-set-keys '("h") 'left)
-  (win-switch-set-keys '("l") 'right)
-  (win-switch-set-keys '("o") 'next-window)
-  (win-switch-set-keys '("p") 'previous-window)
-  ;; リサイズ
-  (win-switch-set-keys '("K") 'enlarge-vertically)
-  (win-switch-set-keys '("J") 'shrink-vertically)
-  (win-switch-set-keys '("H") 'shrink-horizontally)
-  (win-switch-set-keys '("L") 'enlarge-horizontally)
-  ;; 分割
-  (win-switch-set-keys '("3") 'split-horizontally)
-  (win-switch-set-keys '("2") 'split-vertically)
-  (win-switch-set-keys '("0") 'delete-window)
-  ;; その他
-  (win-switch-set-keys '(" ") 'other-frame)
-  (win-switch-set-keys '("u" [return]) 'exit)
-  (win-switch-set-keys '("\M-\C-g") 'emergency-exit)
-  ;; C-x oを置き換える
-  (global-set-key (kbd "C-x o") 'win-switch-dispatch))
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07

@@ -35,7 +35,6 @@
 
 
 ;;;
-<<<<<<< HEAD
 ;; Package
 ;;
 ;;
@@ -46,13 +45,10 @@
 
 
 ;;;
-=======
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 ;; Common 
 ;;
 ;;
 ;;;
-<<<<<<< HEAD
 (depends-on "exec-path-from-shell")   ;; Pathの引き継ぎ
 (depends-on "migemo")                 ;; migemo
 (depends-on "igrep")                  ;; grep interface
@@ -67,34 +63,11 @@
 (depends-on "multiple-cursors")
 (depends-on "expand-region")
 (depends-on "bind-key")
-=======
-(depends-on "undo-tree")              ;; Undo Historyの可視化
-(depends-on "auto-complete")          ;; 自動補完
-(depends-on "fuzzy")
-(depends-on "migemo")
-(depends-on "popup")
-(depends-on "popwin")
-(depends-on "yasnippet")
-(depends-on "smartrep")
-(depends-on "smart-compile")
-(depends-on "smartparens")
-(depends-on "org-plus-contrib")
-(depends-on "buffer-move")
-(depends-on "recentf-ext")
-(depends-on "multiple-cursors")
-(depends-on "igrep")
-(depends-on "drag-stuff")
-(depends-on "exec-path-from-shell")
-(depends-on "expand-region")
-(depends-on "idle-highlight-mode")
-(depends-on "prodigy")
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 (depends-on "projectile")
 (depends-on "anzu") ;; 
 (depends-on "open-junk-file")
 (depends-on "smart-newline")
 (depends-on "win-switch")
-<<<<<<< HEAD
 (depends-on "smart-compile")
 (depends-on "org-plus-contrib")
 ;;(depends-on "smartrep")
@@ -102,18 +75,6 @@
 ;;(depends-on "drag-stuff")
 ;;(depends-on "idle-highlight-mode")
 ;;(depends-on "prodigy")
-=======
-
-
-
-;;;
-;; Package
-;;
-;;
-;;;
-(depends-on "use-package")
-(depends-on "pallet")
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -123,21 +84,6 @@
 (depends-on "git-gutter")
 (depends-on "magit")
 
-<<<<<<< HEAD
-=======
-;;
-;; helm
-;;
-(depends-on "helm")
-(depends-on "ac-helm")
-(depends-on "helm-descbinds")
-(depends-on "helm-git")
-(depends-on "helm-ls-git")
-(depends-on "helm-migemo")
-(depends-on "helm-gtags")
-(depends-on "helm-projectile")
-
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 ;;
@@ -165,21 +111,10 @@
 (depends-on "markdown-mode")
 (depends-on "web-mode")
 (depends-on "yaml-mode")
-<<<<<<< HEAD
 (depends-on "twittering-mode")
 
 
 
-=======
-
-
-;;
-;; Other
-;;
-(depends-on "bind-key")
-(depends-on "cask")
-(depends-on "twittering-mode")
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
 
 
 
@@ -190,7 +125,6 @@
 (depends-on "flycheck")
 (depends-on "flymake-easy")
 (depends-on "flymake-php")
-<<<<<<< HEAD
 (depends-on "flymake-phpcs")
 (depends-on "flycheck-cask")
 (depends-on "flymake-jshint")
@@ -208,6 +142,3 @@
 (depends-on "helm-migemo")
 (depends-on "helm-gtags")
 (depends-on "helm-projectile")
-=======
-(depends-on "flycheck-cask")
->>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
