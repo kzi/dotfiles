@@ -1,0 +1,19 @@
+.cask
+.recentf
+.saves-*
+eshell/alias
+eshell/history
+eshell/lastdir
+<<<<<<< HEAD
+tutorial
+=======
+>>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
+*.eld
+history
+places
+junk/*.org
+backup/#*
+<<<<<<< HEAD
+ac-comphist.dat
+=======
+>>>>>>> b049def98a866a24287fe26ae8c75bc4580ead07
