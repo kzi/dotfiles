@@ -1,0 +1,8 @@
+path=(
+    ${HOME}/bin(N-/)
+    ${HOME}/.cask/bin(N-/)
+    ${HOME}/.phpenv/bin(N-/)
+    $path
+)
+
+eval "$(phpenv init - zsh)"
