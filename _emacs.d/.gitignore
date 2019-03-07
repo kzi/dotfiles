@@ -1,0 +1,13 @@
+.cask
+.recentf
+.saves-*
+eshell/alias
+eshell/history
+eshell/lastdir
+*.eld
+history
+places
+junk/*.org
+backup/#*
+ac-comphist.dat
+elpa/*

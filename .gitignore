@@ -1,10 +1,11 @@
 *.elc
 *.dat
-emacs.d/auto-save-list/*
-emacs.d/history
-emacs.d/elpa/*
+_emacs.d/auto-save-list/*
+_emacs.d/history
+_emacs.d/elpa/*
 .DS_Store
 
 vimperator/info/default/*
-emacs.d/url/*
-emacs.d/elpa/archives/*
+_emacs.d/url/*
+_emacs.d/elpa/archives/*
+_emacs.d/recentf
